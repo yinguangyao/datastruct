@@ -4,11 +4,11 @@ class List {
     private listLen: number;
     public list: any[] = Array(this.MAXSIZE);
 
-    constructor(listLen: number) {
+    public constructor(listLen: number) {
         this.listLen = listLen;
     }
-    public init(items: any[]): any[] {
-        items && items.forEach((item: any, index: number) => {
+    public init(items: any[] = []): any[] {
+        items.forEach((item: any, index: number): void => {
             this.list[index] = item;
         })
         return this.list;
@@ -30,10 +30,10 @@ class List {
     public insert = (i: number, item: any): void => {
         let j = i;
         if (this.listLen === this.MAXSIZE) {
-            throw "线性表已满";
+            throw new Error("线性表已满");
         }
         if (i < 0 || i > this.listLen) {
-            throw "i is illegal"
+            throw new Error("i is illegal")
         }
         this.listLen++;
         while(j < this.listLen-1) {
@@ -45,13 +45,14 @@ class List {
     }
     public delete = (i: number): void => {
         if (i < 0 || i > this.listLen) {
-            throw "删除位置不合理";
+            throw new Error("删除位置不合理");
         }
         this.list[i] = undefined;
         while(i < this.listLen-1) {
             this.list[i] = this.list[i+1];
             i++;
         }
+        delete this.list[i];
         this.listLen--;
         console.log("delete success", this.list);
     }

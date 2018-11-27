@@ -1,13 +1,23 @@
 {
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "rules": {
-    "ordered-imports": false,
+    "ordered-imports": true,
     "no-console": [
       false
     ],
     "only-arrow-functions": [
       false
-    ]
+    ],
+    "member-ordering": [false],
+    "no-unused-expressions": [
+      "error", 
+      {
+        "allowTernary": true,
+        "allowShortCircuit": true,
+        "allowTaggedTemplates": true
+      }
+    ],
+    "no-conditional-assignment": false
   },
   "linterOptions": {
     "exclude": [

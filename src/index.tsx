@@ -8,7 +8,7 @@ const list = new List(6);
 list.init([1, 2, 3, 4, 5, 6]);
 console.log(list);
 list.insert(5, 7);
-list.delete(5);
+list.delete(3);
 
 ReactDOM.render(
   <App />,
