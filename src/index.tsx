@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './App';
-import List from './chainlist/List'
+import List from './linearList/List'
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 const list = new List(6);
